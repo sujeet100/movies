@@ -1,0 +1,15 @@
+spring:
+  flyway:
+    url: jdbc:h2:mem:db-test;DB_CLOSE_DELAY=-1
+    user: sa
+    password: sa
+  r2dbc:
+    url: r2dbc:h2:mem://./db-test
+    username: sa
+    password: sa
+    initialization-mode: always
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
