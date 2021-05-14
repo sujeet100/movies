@@ -22,9 +22,7 @@ internal class MovieRouterTest {
         )
 
         coEvery {
-            movieHandler.getMovies(
-                any()
-            )
+            movieHandler.getMovies()
         }.returns(ok().bodyValueAndAwait(movies))
         client.get()
             .uri("/movies")
