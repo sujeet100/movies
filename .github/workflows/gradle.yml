@@ -20,3 +20,15 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+  
+  package-docker:
+    name: Build docker image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+        
+      - name: Build docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: false
