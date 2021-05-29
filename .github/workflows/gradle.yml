@@ -40,5 +40,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: false
-          build-args:
-            - JAR_FILE: $GITHUB_WORKSPACE/build/libs/*.jar
+          build-args: |
+            JAR_FILE=$GITHUB_WORKSPACE/build/libs/*.jar
