@@ -6,5 +6,5 @@ COPY src src
 RUN gradle build -x test
 
 FROM adoptopenjdk/openjdk11:alpine
-COPY --from=build /workspace/app/build/libs/*.jar build/libs/movies.jar
-ENTRYPOINT ["java","-jar","/movies.jar"]
+COPY --from=build /workspace/app/build/libs/*.jar movies.jar
+ENTRYPOINT ["java","-jar","movies.jar"]
