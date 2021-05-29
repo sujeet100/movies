@@ -41,4 +41,4 @@ jobs:
         with:
           push: false
           build-args: |
-            JAR_FILE=$GITHUB_WORKSPACE/build/libs/*.jar
+            JAR_FILE=${{ github.workspace }}/build/libs/*.jar
