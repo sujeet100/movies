@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movies-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      appName: movies-service
+  template:
+    metadata:
+      labels:
+        appName: movies-service
+    spec:
+      containers:
+        - name: movies-service
+          image: gcr.io/PROJECT_ID/IMAGE:TAG
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+          readinessProbe:
+            httpGet:
+              path: /actuator/info
+              port: 8080
