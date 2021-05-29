@@ -1,5 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- movies-deployment.yml
-- movies-service.yml
+- movies-deployment.yaml
+- movies-service.yaml
