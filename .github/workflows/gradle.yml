@@ -75,3 +75,8 @@ jobs:
           ./kustomize build . | kubectl apply -f -
           kubectl rollout status deployment/$DEPLOYMENT_NAME
           kubectl get services -o wide
+
+      # Deploy the Docker image to the GKE cluster
+      - name: Deploy Ingress
+        run: |-
+          kubectl apply -f ingress.yaml

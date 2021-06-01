@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: movies-service
 spec:
+  type: NodePort
   selector:
     app: movies-service
   ports:
