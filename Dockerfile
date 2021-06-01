@@ -3,7 +3,7 @@ WORKDIR /workspace/app
 COPY gradle gradle
 COPY build.gradle.kts settings.gradle.kts gradlew ./
 COPY src src
-RUN gradle build -x test
+RUN gradle bootJar
 
 FROM adoptopenjdk/openjdk11:alpine
 COPY --from=build /workspace/app/build/libs/*.jar movies.jar

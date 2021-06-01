@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: movies-service
+  name: movies-service-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      appName: movies-service
+      app: movies-service
   template:
     metadata:
       labels:
-        appName: movies-service
+        app: movies-service
     spec:
       containers:
         - name: movies-service
