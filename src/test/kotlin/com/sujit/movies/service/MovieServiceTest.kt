@@ -23,7 +23,6 @@ class MovieServiceTest {
         coEvery { movieRepository.getAll() }.returns(movies)
 
         val actual = movieService.getAll()
-        assertThat(1+2).isEqualTo(4)
         assertThat(actual).isEqualTo(movies.map { it.toMovie() })
     }
 }
