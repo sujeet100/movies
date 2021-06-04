@@ -27,9 +27,14 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Publish Unit Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1
+      if: always()
+      with:
+        files: test-results/**/*.xml
   package-docker:
     name: Build and Deploy
-    #needs: build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
