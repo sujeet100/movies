@@ -32,6 +32,10 @@ jobs:
       if: always()
       with:
         files: build/test-results/**/*.xml
+    - uses: actions/upload-artifact@v2
+      with:
+        name: test-reports
+        path: build/reports/tests/**
   package-docker:
     name: Build and Deploy
     needs: build
